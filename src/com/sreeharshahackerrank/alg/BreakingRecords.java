@@ -1,0 +1,47 @@
+package com.sreeharshahackerrank.alg;
+
+import java.util.Scanner;
+
+public class BreakingRecords {
+
+	static int[] breakingRecords(int[] score) {
+
+		int lowest = score[0];
+		int highest = score[0];
+		int highrecordCount = 0;
+		int lowrecordCount = 0;
+
+		for (int i = 0; i < score.length; i++) {
+			
+			if (score[i] > highest) {
+				highrecordCount++;
+				highest=score[i];
+			} else if (score[i] < lowest) {
+				lowrecordCount++;
+				lowest=score[i];
+			}
+		}
+		int[] breakRecords = new int[2];
+		breakRecords[0] = highrecordCount;
+		breakRecords[1] = lowrecordCount;
+
+		return breakRecords;
+	}
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		int[] score = new int[n];
+		for (int score_i = 0; score_i < n; score_i++) {
+			score[score_i] = in.nextInt();
+		}
+		int[] result = breakingRecords(score);
+		for (int i = 0; i < result.length; i++) {
+			System.out.print(result[i] + (i != result.length - 1 ? " " : ""));
+		}
+		System.out.println("");
+
+		in.close();
+	}
+
+}
