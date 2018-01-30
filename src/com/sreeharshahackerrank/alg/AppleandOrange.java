@@ -48,7 +48,7 @@ public class AppleandOrange {
 		for (int i = 0; i < result.length; i++) {
 			System.out.print(result[i] + (i != result.length - 1 ? "\n" : ""));
 		}
-		System.out.println("");
+		System.out.println("slkldjdfksdflkasjlfkjaslkf");
 
 		in.close();
 	}
